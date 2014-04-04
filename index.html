@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Measure Speed</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="http://yandex.st/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript" src="http://yandex.st/underscore/1.5.2/underscore-min.js"></script>
+        <script type="text/javascript" src="http://yandex.st/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="measure.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="http://yandex.st/bootstrap/3.0.2/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div id="stat" class="row">
+                <div class="col-md-12">
+                    <h2>Измеритель скорости</h2>
+                    <form role="form">
+                        <div class="form-group jsProgressForm" style="display: none;"></div>
+                        <div class="form-group">
+                            <div class="alert jsResultForm" style="display: none;">
+                                Ваша скорость: <b class="jsResultMb">0</b>Мбит/с, <b class="jsResultMbps">0</b>МБ/с
+                            </div>
+                            <table class="table table-striped jsListResultTable" style="display: none;">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Мбит/с</th>
+                                        <th>МБ/с</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="jsListResult"></tbody>
+                            </table>
+
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-primary jsMeasure" data-loading-text="Скорость измеряется..."><i class="glyphicon glyphicon-time"></i> Измерить скорость</button>
+                            <button type="button" class="btn jsShowListResult" style="display: none;" data-toggle-text="<i class='glyphicon glyphicon-list-alt'></i> Скрыть результаты"><i class="glyphicon glyphicon-list-alt"></i> Показать все результаты</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
