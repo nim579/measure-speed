@@ -31,10 +31,23 @@ $(function(){
 		$('.jsShowListResult').fadeIn();
 		$table.empty();
 		$(this).button('loading');
-		var measure = new measureSpeed(measureDone, measureProcess);
+
+		var measureOptions = {
+			attempts: $('#attempts').val() || null,
+			src: $('#fileUrl').val() || null,
+			length: $('#fileLength').val() || null
+		}
+
+		var measure = new measureSpeed(measureOptions, measureDone, measureProcess);
 	});
 	$('.jsShowListResult').bind('click', function(){
 		$('.jsListResultTable').fadeToggle().addClass('mVisible');
+		buttonText = $(this).data('toggleText');
+		$(this).data('toggleText', $(this).html());
+		$(this).html(buttonText);
+	});
+	$('.jsShowOptions').bind('click', function(){
+		$('.jsForm').fadeToggle().addClass('mVisible');
 		buttonText = $(this).data('toggleText');
 		$(this).data('toggleText', $(this).html());
 		$(this).html(buttonText);

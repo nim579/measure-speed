@@ -11,7 +11,7 @@
         <script type="text/javascript" src="measure.js"></script>
         <script type="text/javascript" src="app.js"></script>
 
-        <link rel="stylesheet" type="text/css" href="http://yandex.st/bootstrap/3.0.2/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="http://yastatic.net/bootstrap/3.3.0/css/bootstrap.min.css">
     </head>
     <body>
         <div class="container">
@@ -38,7 +38,23 @@
                         </div>
                         <div class="form-group">
                             <button type="button" class="btn btn-primary jsMeasure" data-loading-text="Скорость измеряется..."><i class="glyphicon glyphicon-time"></i> Измерить скорость</button>
-                            <button type="button" class="btn jsShowListResult" style="display: none;" data-toggle-text="<i class='glyphicon glyphicon-list-alt'></i> Скрыть результаты"><i class="glyphicon glyphicon-list-alt"></i> Показать все результаты</button>
+                            <button type="button" class="btn jsShowListResult" style="display: none;" data-toggle-text="<i class='glyphicon glyphicon-th-list'></i> Скрыть результаты"><i class="glyphicon glyphicon-th-list"></i> Показать все результаты</button>
+                            <button type="button" class="btn btn-default jsShowOptions" data-toggle-text="<i class='glyphicon glyphicon-cog'></i> Скрыть настройки"><i class="glyphicon glyphicon-cog"></i> Показать настройки</button>
+                            <div class="jsForm" style="display: none;">
+                                <h3>Настройки</h3>
+                                <div class="form-group">
+                                    <label for="attempts">Количество попыток</label>
+                                    <input class="form-control" type="text" value="5" placeholder="15" id="attempts">
+                                </div>
+                                <div class="form-group">
+                                    <label for="fileUrl">Адрес файла</label>
+                                    <input class="form-control" type="text" value="http://test.host.net.nim579.ru/gen.gif" placeholder="http://test.host.net.nim579.ru/gen.gif" id="fileUrl">
+                                </div>
+                                <div class="form-group">
+                                    <label for="fileLength">Размер файла (бит)</label>
+                                    <input class="form-control" type="text" value="1048576" placeholder="1048576" id="fileLength">
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>
