@@ -1,6 +1,36 @@
+$.extend({
+	getUrlVarsAsObject: function(hashes) {
+		var hash, i, j, len, vars;
+		vars = {};
+		if (hashes == null) {
+			hashes = window.location.search;
+		}
+		hashes = hashes.substr(1).split('&');
+		if (hashes.length >= 1) {
+			for (i = j = 0, len = hashes.length; j < len; i = ++j) {
+				hash = hashes[i];
+				hash = hash.split('=');
+				if (hash[0]) {
+					if (hash[1] === void 0) {
+						vars[hash[0]] = true;
+					} else {
+						vars[hash[0]] = decodeURI(hash[1]);
+					}
+				}
+			}
+		}
+		return vars;
+	}
+});
 $(function(){
 	var measure = null;
-	var $table = $('.jsListResult')
+	var $table = $('.jsListResult');
+
+	var params = $.getUrlVarsAsObject();
+	if(params.attempts) $('#attempts').val(params.attempts);
+	if(params.file) $('#fileUrl').val(decodeURIComponent(params.file));
+	if(params.size) $('#fileLength').val(params.size);
+
 	var measureDone = function(results){
 		console.log(results)
 		$('.jsResult').text(results.average.mbs.toFixed(2));
