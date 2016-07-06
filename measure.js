@@ -3,7 +3,7 @@ window.measureSpeed = (function() {
   function measureSpeed(options, done, process) {
     var attempts, average, measureProcess, measurements;
     this.measureAttempts = options.attempts || 15;
-    this.testFileSrc = options.src || "http://test.host.net.nim579.ru/gen.gif";
+    this.testFileSrc = options.src || "http://st.nim.space/gen.gif";
     this.testFileLength = options.length || 1048576;
     measureProcess = new $.Deferred();
     measurements = [];

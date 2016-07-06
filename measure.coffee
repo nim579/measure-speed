@@ -1,7 +1,7 @@
 class window.measureSpeed
     constructor: (options, done, process)->
         @measureAttempts = options.attempts or 15
-        @testFileSrc = options.src or "http://test.host.net.nim579.ru/gen.gif"
+        @testFileSrc = options.src or "http://st.nim.space/gen.gif"
         @testFileLength = options.length or 1048576
 
         measureProcess = new $.Deferred()
